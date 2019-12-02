@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaApp_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHc-fL-ZYA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-rB-9VF">
+                                <rect key="frame" x="88" y="533" width="238" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Fetch Image to Background"/>
+                                <connections>
+                                    <action selector="fetchImageToBackground:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWA-Zk-8MG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3K-p4-fXC">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5po-hP-Vah"/>
+                                    <constraint firstAttribute="height" constant="100" id="y74-YL-dzO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Instagram_icon"/>
+                                <connections>
+                                    <action selector="authenticateOrSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d3k-kb-3kh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bGg-rB-9VF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="Bs1-pm-SIe"/>
+                            <constraint firstItem="aHc-fL-ZYA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Rd3-uZ-KBD"/>
+                            <constraint firstItem="aHc-fL-ZYA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SSo-Qr-mfh"/>
+                            <constraint firstItem="k3K-p4-fXC" firstAttribute="centerY" secondItem="aHc-fL-ZYA" secondAttribute="centerY" id="UKc-cd-cub"/>
+                            <constraint firstItem="k3K-p4-fXC" firstAttribute="centerX" secondItem="bGg-rB-9VF" secondAttribute="centerX" id="eRe-OW-yNJ"/>
+                            <constraint firstItem="aHc-fL-ZYA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="f35-4b-dH0"/>
+                            <constraint firstItem="k3K-p4-fXC" firstAttribute="centerX" secondItem="aHc-fL-ZYA" secondAttribute="centerX" id="hnz-K3-Lwh"/>
+                            <constraint firstItem="aHc-fL-ZYA" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="lDj-ha-kv0"/>
+                            <constraint firstItem="bGg-rB-9VF" firstAttribute="top" secondItem="k3K-p4-fXC" secondAttribute="bottom" constant="35" id="tKa-7R-2mT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="aHc-fL-ZYA" id="YQe-qW-5DB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375" y="152"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="hyd-u6-IrZ">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="mp9-Fb-nEP" customClass="WebViewController" customModule="InstaApp_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RjA-2l-URJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQM-kY-D8Y">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HQM-kY-D8Y" firstAttribute="top" secondItem="RjA-2l-URJ" secondAttribute="top" id="0r9-zS-b5N"/>
+                            <constraint firstItem="HQM-kY-D8Y" firstAttribute="trailing" secondItem="RjA-2l-URJ" secondAttribute="trailing" id="5Zz-vG-w6v"/>
+                            <constraint firstItem="HQM-kY-D8Y" firstAttribute="bottom" secondItem="RjA-2l-URJ" secondAttribute="bottom" id="G5u-j6-8iX"/>
+                            <constraint firstItem="HQM-kY-D8Y" firstAttribute="leading" secondItem="RjA-2l-URJ" secondAttribute="leading" id="o6z-v3-wOY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wJM-4C-ehF"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="HQM-kY-D8Y" id="3rU-Y6-rPf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8K-ia-R9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="154"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Instagram_icon" width="599" height="600"/>
+    </resources>
+</document>
