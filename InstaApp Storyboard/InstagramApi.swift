@@ -175,7 +175,7 @@ class InstagramApi {
 
     
     func getInstagramUser(testUserData: InstagramTestUser, completion: @escaping (InstagramUser) -> Void) {
-        let urlString = "\(BaseURL.graphApi.rawValue)\(testUserData.user_id)?fields=id,username&access_token=\(testUserData.access_token)"
+        let urlString = "\(BaseURL.graphApi.rawValue)\(testUserData.user_id)?fields=id,username,media_count&access_token=\(testUserData.access_token)"
         let request = URLRequest(url: URL(string: urlString)!)
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: {(data, response, error) in
